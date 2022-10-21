@@ -1,46 +1,52 @@
-.menu {
-  border: 0;
+.menu-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /*border-style: solid;*/
-  height: 100vh;
-  width: 100vw;
-}
-
-.submenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  /*border-style: solid;*/
-  height: 100%;
-  width: 33%;
-}
-
-a {
-  display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 2em;
-  border: none;
-  margin-top: 2rem;
-  text-decoration: none;
-  height: 15%;
-  border-radius: 1em;
-  background-color: #666;
-  color: white;
-  width: 50%;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../assets/img/wallpaper.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-a:hover {
-  background-color: #444;
+.title {
+  font-size: 3em;
+  margin: 20px 0;
 }
 
-h1 {
-  width: 33%;
-  font-size: 5em;
-  /*border-style: solid;*/
-  text-align: center;
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin: 30px 5px;
+  padding: 1em 4em;
+  border-radius: 40px;
+  border: 5px solid #fff;
+  font-size: 1.5em;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
+  transition: transform .2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-start {
+  background-image: linear-gradient(to right, #f43030, #f729d1);
+  filter: contrast(150%);
+}
+
+.btn-options {
+  background-image: linear-gradient(to right, #30c3f4, #29f778);
+  filter: contrast(150%);
+}
+
+.btn-close {
+  background-image: linear-gradient(to right, #f4f130, #f78229);
+  filter: contrast(150%);
 }

@@ -1,9 +1,12 @@
-<div class="menu">
-  <h1>Clon de Hablalo</h1>
+<div class="menu-container">
+  <audio autoplay>
+    <source src="https://open.spotify.com:track:7M8JTsapCmde1ixbq4WWUX?si=3eae149168674eff">
+  </audio>
+  <h1 class="title">{{title}}</h1>
 
-  <div class="submenu">
-    <a routerLink="/start" routerLinkActive="active">Comenzar</a>
-    <a routerLink="/opciones" routerLinkActive="active">Opciones</a>
-    <a routerLink="/salir" routerLinkActive="active">Salir</a>
+  <div class="menu">
+    <button class="btn btn-start" routerLink="/game" routerLinkActive="active">Comenzar</button>
+    <button class="btn btn-options" routerLink="/options" routerLinkActive="active">Opciones</button>
+    <button class="btn btn-close">Salir</button>
   </div>
 </div>
