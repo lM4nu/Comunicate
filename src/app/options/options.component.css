@@ -42,3 +42,15 @@ h4 {
     text-decoration: underline;
     font-size: 1.35em;
 }
+
+.btn {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    z-index: 99999;
+    transition: all .7s ease;
+    font-size: 2.5em;
+}

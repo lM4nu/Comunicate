@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url('../../assets/img/wallpaper.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -31,9 +31,6 @@ img {
     border-radius: 30px;
     background-color: aliceblue;
     text-align: center;
-    filter: brightness(110%) saturate(130%) contrast(110%);
-    -webkit-filter: brightness(110%) saturate(130%) contrast(110%);
-    -moz-filter: brightness(110%) saturate(130%) contrast(110%);
 }
 
 .title {
@@ -42,4 +39,61 @@ img {
     font-size: 2em;
     border: 5px solid #000;
     border-radius: 20px;
+}
+
+.btn {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+    z-index: 99999;
+    transition: all .7s ease;
+}
+
+.btn-white {
+    color: #fff;
+}
+
+i {
+    font-size: 2.5em;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    left: -40%;
+    background-image: linear-gradient(to right, #1d1d1d, #1d1d1de1,#1d1d1da9);
+    position: fixed;
+    top: 0vh;
+    width: 30%;
+    height: 100vh;
+    right: 70%;
+    z-index: 999;
+    transition: all .7s ease;
+    opacity: 0;
+}
+
+.activo {
+    left: 0;
+    opacity: 1;
+}
+
+.list {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #f0f8ff;
 }
