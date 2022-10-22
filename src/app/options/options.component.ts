@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
 
+  title:string = 'Opciones';
+
   constructor() { }
 
   ngOnInit(): void {
