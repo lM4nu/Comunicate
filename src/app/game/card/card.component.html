@@ -1,4 +1,4 @@
 <div class="container-imagen">
   <img [src]="info.img" alt="image" />
-  <h2 class="title">{{ info.title }}</h2>
+  <h2 class="title" (click)="hablar(info.title)">{{ info.title }}</h2>
 </div>
