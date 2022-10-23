@@ -8,13 +8,15 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { OptionsComponent } from './options/options.component';
 import { GameComponent } from './game/game.component';
+import { CardComponent } from './game/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     OptionsComponent,
-    GameComponent
+    GameComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
