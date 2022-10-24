@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CardComponent } from '../game/card/card.component';
 
 @Component({
   selector: 'app-options',
@@ -9,10 +8,10 @@ import { CardComponent } from '../game/card/card.component';
 export class OptionsComponent implements OnInit {
 
   title: string = 'Opciones';
-  saturate_value: number = 100;
-  blur_value: number = 0;
-  brightness_value: number = 100;
-  contrast_value: number = 100;
+  saturate_value: number | string | null = localStorage.getItem('saturate');
+  blur_value: number | string | null = localStorage.getItem('blur');
+  brightness_value: number | string | null = localStorage.getItem('brightness');
+  contrast_value: number | string | null = localStorage.getItem('contrast');
 
   constructor() {
   }
@@ -27,24 +26,34 @@ export class OptionsComponent implements OnInit {
     const i_blur = (document.querySelector('#input-blur') as HTMLInputElement);
     const i_saturate = (document.querySelector('#input-saturate') as HTMLInputElement);
 
-    const img = (document.querySelector('.imagen') as HTMLImageElement)
+    const img = (document.querySelector('.imagen') as HTMLImageElement);
+    img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
 
     i_saturate.addEventListener('change', (): void => {
-      this.saturate_value = parseInt(i_saturate.value);
-      img.style.cssText = `filter: saturate(${this.saturate_value}%) blur(${this.blur_value}px) contrast(${this.contrast_value}%) brightness(${this.brightness_value}%);`;
-    });
-    i_blur.addEventListener('change', (): void => {
-      this.blur_value = parseInt(i_blur.value);
-      img.style.cssText = `filter: saturate(${this.saturate_value}%) blur(${this.blur_value}px) contrast(${this.contrast_value}%) brightness(${this.brightness_value}%);`;
+
+      localStorage.setItem('saturate', i_saturate.value);
+      img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
+
     });
     i_contrast.addEventListener('change', (): void => {
-      this.contrast_value = parseInt(i_contrast.value);
-      img.style.cssText = `filter: saturate(${this.saturate_value}%) blur(${this.blur_value}px) contrast(${this.contrast_value}%) brightness(${this.brightness_value}%);`;
+
+      localStorage.setItem('contrast', i_contrast.value);
+      img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
+
+    });
+    i_blur.addEventListener('change', (): void => {
+
+      localStorage.setItem('blur', i_blur.value);
+      img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
+
     });
     i_brightness.addEventListener('change', (): void => {
-      this.brightness_value = parseInt(i_brightness.value);
-      img.style.cssText = `filter: saturate(${this.saturate_value}%) blur(${this.blur_value}px) contrast(${this.contrast_value}%) brightness(${this.brightness_value}%);`;
+
+      localStorage.setItem('brightness', i_brightness.value);
+      img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
+
     });
+
   }
 
 }

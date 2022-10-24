@@ -14,10 +14,6 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setFilterValues(blur: number, saturate: number, contrast: number, brightness: number): void {
-    const img = (document.querySelector('img') as HTMLImageElement);
-  }
-
   hablar(input: string) {
     this.speechService.hablar(input);
   }
