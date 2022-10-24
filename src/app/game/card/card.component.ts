@@ -9,10 +9,13 @@ import { SpeechService } from 'src/app/services/speech.service';
 export class CardComponent implements OnInit {
   @Input() info: any;
 
-  constructor(private speechService: SpeechService) {}
+  constructor(private speechService: SpeechService) { }
 
   ngOnInit(): void {
-    //console.log(this.info);
+  }
+
+  setFilterValues(blur: number, saturate: number, contrast: number, brightness: number): void {
+    const img = (document.querySelector('img') as HTMLImageElement);
   }
 
   hablar(input: string) {

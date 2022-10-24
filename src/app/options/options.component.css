@@ -17,7 +17,7 @@
 }
 
 .menu-options {
-    width: 35vw;
+    width: 45vw;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -54,3 +54,16 @@ h4 {
     transition: all .7s ease;
     font-size: 2.5em;
 }
+
+.imagen {
+    position: absolute;
+    top: 20vh;
+    right: 5vw;
+    margin: 10px 0;
+    max-width: 25vw;
+    max-height: 25vh;
+    border: 5px solid #fff;
+    border-radius: 30px;
+    background-color: aliceblue;
+    text-align: center;
+  }
