@@ -17,10 +17,6 @@ export class CardComponent implements OnInit {
     this.valor_filtros = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
   }
 
-  // setImageFilter(): void {
-  //   const img = (document.querySelector('.imagen') as HTMLImageElement);
-  // }
-
   hablar(input: string) {
     this.speechService.hablar(input);
   }

@@ -26,6 +26,7 @@ export class OptionsComponent implements OnInit {
     const i_blur = (document.querySelector('#input-blur') as HTMLInputElement);
     const i_saturate = (document.querySelector('#input-saturate') as HTMLInputElement);
 
+    
     const img = (document.querySelector('.imagen') as HTMLImageElement);
     img.style.cssText = `filter: saturate(${localStorage.getItem('saturate')}%) blur(${localStorage.getItem('blur')}px) brightness(${localStorage.getItem('brightness')}%) contrast(${localStorage.getItem('contrast')}%);`;
 
