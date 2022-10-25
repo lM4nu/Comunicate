@@ -1,8 +1,8 @@
 {
-  "name": "Clon-de-Hablalo",
-  "short_name": "Clon-de-Hablalo",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Comunicate",
+  "short_name": "Comunicate",
+  "theme_color": "#fbc704",
+  "background_color": "#fbc704",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
