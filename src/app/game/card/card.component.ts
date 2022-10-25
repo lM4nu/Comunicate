@@ -9,7 +9,7 @@ import { SpeechService } from 'src/app/services/speech.service';
 export class CardComponent implements OnInit {
   @Input() info: any;
 
-  valor_filtros:string | undefined;
+  valor_filtros: string | undefined;
 
   constructor(private speechService: SpeechService) { }
 

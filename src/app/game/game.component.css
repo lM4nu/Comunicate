@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-image: url("../../assets/img/wallpaper.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -67,3 +67,50 @@ a {
   color: #f0f8ff;
 }
 
+.cards {
+  display: flex;
+  flex-direction: row;
+}
+/*  576px, 768px, 992px y 1200px. */
+@media(max-width:576px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .navbar {
+    width: 65%;
+    height: 100vh;
+    right: 175%;
+    text-align: center;
+  }
+}
+
+@media(min-width:768px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .app-card {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .navbar {
+    width: 65%;
+    height: 100vh;
+    right: 175%;
+  }
+}

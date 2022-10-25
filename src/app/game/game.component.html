@@ -14,7 +14,7 @@
       </li>
     </ul>
   </nav>
-
-  <app-card *ngFor="let item of cards" [info]="item"></app-card>
+  <div class="cards">
+    <app-card class="app-card" *ngFor="let item of cards" [info]="item"></app-card>
+  </div>
 </div>
-
