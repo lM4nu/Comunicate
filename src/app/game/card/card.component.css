@@ -66,3 +66,13 @@ img {
     height: 90%;
   }
 }
+
+@media(min-width:1200px) {
+  img {
+    margin: 3px 0;
+    min-height: 50vh;
+    min-width: 80%;
+    max-width: 100%;
+    max-height: 30%;
+  }
+}
