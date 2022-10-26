@@ -115,7 +115,7 @@ a {
   }
 }
 
-@media(min-width:1200px) {
+@media(min-width:1024px) {
   .cards {
     display: flex;
     flex-direction: row;
@@ -138,7 +138,7 @@ a {
   }
 }
 
-@media(orientation: landscape) {
+@media(max-height:415px) {
   .cards {
     display: flex;
     flex-direction: row;

@@ -107,7 +107,7 @@ h4 {
     }
 }
 
-@media(orientation: landscape) {
+@media(max-height:415px) {
     .title {
         font-size: 1em;
         margin-bottom: 15px;
