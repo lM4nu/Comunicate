@@ -65,3 +65,18 @@
     font-size: 1.15em;
   }
 }
+
+@media(orientation: landscape) {
+  .title {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+
+  .btn {
+    margin: 10px 0;
+    padding: .3em 2em;
+    border-radius: 40px;
+    border: 5px solid #fff;
+    font-size: 1.15em;
+  }
+}
