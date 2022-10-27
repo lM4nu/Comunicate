@@ -5,7 +5,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-image: url('../../assets/img/wallpaper.jpg');
+  background-image: url("../../../assets/img/wallpaper.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,7 +29,7 @@
   font-size: 1.5em;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 .btn:hover {
@@ -51,7 +51,7 @@
   filter: contrast(150%);
 }
 
-@media(max-width:576px) {
+@media (max-width: 576px) {
   .title {
     font-size: 2em;
     margin: 10px 0;
@@ -59,14 +59,14 @@
 
   .btn {
     margin: 15px 0;
-    padding: .5em 2em;
+    padding: 0.5em 2em;
     border-radius: 40px;
     border: 5px solid #fff;
     font-size: 1.15em;
   }
 }
 
-@media(max-height:415px) {
+@media (max-height: 415px) {
   .title {
     font-size: 2em;
     margin: 10px 0;
@@ -74,9 +74,10 @@
 
   .btn {
     margin: 10px 0;
-    padding: .3em 2em;
+    padding: 0.3em 2em;
     border-radius: 40px;
     border: 5px solid #fff;
     font-size: 1.15em;
   }
 }
+

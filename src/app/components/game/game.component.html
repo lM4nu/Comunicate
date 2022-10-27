@@ -9,7 +9,9 @@
         <a routerLink="/home" routerLinkActive="active" class="link">Home</a>
       </li>
       <li class="list-item">
-        <a routerLink="/add-image" routerLinkActive="active" class="link">Agregar imagen</a>
+        <a routerLink="/add-image" routerLinkActive="active" class="link"
+          >Agregar imagen</a
+        >
       </li>
       <li class="list-item">
         <a routerLink="/options" routerLinkActive="active">Opciones</a>
@@ -17,6 +19,11 @@
     </ul>
   </nav>
   <div class="cards">
-    <app-card class="app-card" *ngFor="let item of cards" [info]="item"></app-card>
+    <app-card
+      class="app-card"
+      *ngFor="let item of localStorageService.imgData"
+      [info]="item"
+    ></app-card>
   </div>
 </div>
+

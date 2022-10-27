@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DATA } from '../cards-info';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { DATA } from '../../cards-info';
 
 @Component({
   selector: 'app-game',
@@ -7,12 +8,18 @@ import { DATA } from '../cards-info';
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  constructor() {}
+  constructor(public localStorageService: LocalStorageService) {}
 
   cards: any;
 
   ngOnInit(): void {
-    this.cards = DATA;
+    if (this.localStorageService.isEmpty()) {
+      DATA.forEach((item) => {
+        this.localStorageService.addImgData(item);
+      });
+    } else {
+      this.localStorageService.imgData = this.localStorageService.getData();
+    }
     this.navbar();
   }
 
