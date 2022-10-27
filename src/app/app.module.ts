@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { OptionsComponent } from './options/options.component';
 import { GameComponent } from './game/game.component';
 import { CardComponent } from './game/card/card.component';
+import { AddImageComponent } from './add-image/add-image.component';
+import { GaleryComponent } from './galery/galery.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CardComponent } from './game/card/card.component';
     HomeComponent,
     OptionsComponent,
     GameComponent,
-    CardComponent
+    CardComponent,
+    AddImageComponent,
+    GaleryComponent
   ],
   imports: [
     BrowserModule,
