@@ -94,7 +94,7 @@ app.route('/send').post(sendPush);
 
 //usamos 9000 de prueba por ahora
 const httpServer = app.listen(9000, () => {
-    console.log("El servidor esta corriendo en: " + httpServer.address().port);
+    console.log("El servidor esta corriendo en: http://localhost:" + httpServer.address().port);
 });
 
 // node app.js -> te dira en que servidor esta corriendo node

@@ -8,7 +8,7 @@ export class NotificationService {
 
   constructor(private httpClient:HttpClient) { }
 
-  public url = "https://comunicate-con-nosotros.herokuapp.com";
+  public url = "http://localhost:9000";
 
 
   saveToken = (token:any) => {

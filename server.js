@@ -14,4 +14,10 @@ app.get('/*', function(req,res) {
 });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+const HttpServer = app.listen(process.env.PORT || 8080, () => {
+  console.log("El servidor esta corriendo en: http://localhost:" + HttpServer.address().port);
+});
+
+//const httpServer = app.listen(9000, () => {
+//  console.log("El servidor esta corriendo en: " + httpServer.address().port);
+//});
