@@ -44,26 +44,20 @@ export class AppComponent {
   // Notificaciones Push
 
   public readonly VAPID_PUBLIC_KEY = 'BH-6yg2vBmRxMIc7fHNk2pICGzFGMCy_Y0NKmX3vLTrI08MqlxIJ5uvNOMpVft8EXXNe-AhEqtO75IiEnelEeQg';
+  respuesta: any;
 
-  subscribeToNotifications(): any {
-
-    this.swPush.requestSubscription({
-      serverPublicKey: this.VAPID_PUBLIC_KEY
-    }).then(sub => {
-      const token = JSON.parse(JSON.stringify(sub));
-      console.log(' **ojo**', token)
-      this.notificationService.saveToken(token).subscribe({
-        next: (res) => {
-
-          console.log(res);
-
-        }, error: (err) => {
-          console.log('Error', err);
-        }
-      });
-
+  subscribeToNotifications() {
+    this.swPush.requestSubscription(
+      {
+        serverPublicKey: this.VAPID_PUBLIC_KEY
+      }
+    ).then(respuesta => {
+      this.respuesta = respuesta
     })
-  };
+      .catch(err => {
+        this.respuesta = err
+      })
+  }
 
 
 }
