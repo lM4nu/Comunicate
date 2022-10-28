@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SwPush } from '@angular/service-worker';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 import { NotificationService } from './services/notification.service';
 
 @Component({
@@ -11,7 +11,10 @@ export class AppComponent {
 
   title = 'Clon-de-Hablalo';
 
-  constructor(private swPush: SwPush, private notificationService: NotificationService) {
+  constructor(
+    private swPush: SwPush,
+    private swUpdate: SwUpdate,
+    private notificationService: NotificationService) {
     this.subscribeToNotifications();
   }
 
@@ -29,7 +32,14 @@ export class AppComponent {
     if (!localStorage.getItem('contrast')) {
       localStorage.setItem('contrast', '100');
     }
+
+    // Nueva Version - Actualizar
+
+
+
   }
+
+
 
   // Notificaciones Push
 
@@ -42,13 +52,22 @@ export class AppComponent {
     }).then(sub => {
       const token = JSON.parse(JSON.stringify(sub));
       console.log(' **ojo**', token)
-      this.notificationService.saveToken(token).subscribe((res: Object) => {
-        console.log(res);
-      }, (err) => {
-        console.log('Error', err)
-      })
-    }).catch(err => console.error('No se aceptaron las notificacioes', err));
-  }
+      this.notificationService.saveToken(token).subscribe({
+        next: (res) => {
+
+          console.log(res);
+
+        }, error: (err) => {
+          console.log('Error', err);
+        }
+      });
+
+    })
+  };
 
 
 }
+
+
+
+

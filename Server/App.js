@@ -66,20 +66,27 @@ const sendPush = (req, res) => {
 
     const directoryPath = path.join(__dirname, 'token');
 
-    fs.readdir(directoryPath);
+    let files = [];
+    
+    fs.readdir(directoryPath, (files) => {
+        if (err) {
+            handlerResponse(res, 'Error read', 500)
+        }
 
-    files.array.forEach((file) => {
-        const tokenRaw = fs.readFileSync('${directoryPath}/${file}');
-        const tokenParse = JSON.parse(tokenRaw);
+        files.array.forEach((file = string) => {
 
-        webPush.sendNotification(
-            tokenParse,
-            JSON.stringify(payload))
-            .then(res => {
-                console.log('Enviado');
-            }).catch(err => {
-                console.log('Permisos o keys invalidas');
-            })
+            const tokenRaw = fs.readFileSync('${directoryPath}/${file}');
+            const tokenParse = JSON.parse(tokenRaw);
+
+            webPush.sendNotification(
+                tokenParse,
+                JSON.stringify(payload))
+                .then(res => {
+                    console.log('Enviado');
+                }).catch(err => {
+                    console.log('Permisos o keys invalidas');
+                })
+        });
     });
 
 }
@@ -97,4 +104,5 @@ const httpServer = app.listen(9000, () => {
     console.log("El servidor esta corriendo en: http://localhost:" + httpServer.address().port);
 });
 
-// node app.js -> te dira en que servidor esta corriendo node
+    // node app.js -> te dira en que servidor esta corriendo node
+
