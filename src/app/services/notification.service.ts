@@ -12,7 +12,7 @@ export class NotificationService {
 
 
   saveToken = (token:any) => {
-    return this.httpClient.post('${this.url}/save',
+    return this.httpClient.post('${this.url}/api/save',
     {
       token
     });

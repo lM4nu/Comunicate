@@ -48,7 +48,7 @@ const enviarNotificacion = (req, res) => {
         }
     }
 
-    webpush.sendNotification(
+    webPush.sendNotification(
         pushSubscription,
         JSON.stringify(payload))
         .then(res => {
@@ -62,3 +62,8 @@ const enviarNotificacion = (req, res) => {
 }
 
 app.route('/api/enviar').post(enviarNotificacion);
+
+
+const httpServer = app.listen(9000, () => {
+    console.log('HTTP Server running at http://localhost:' + httpServer.address().port)
+});

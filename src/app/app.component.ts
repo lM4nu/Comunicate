@@ -44,6 +44,7 @@ export class AppComponent {
   // Notificaciones Push
 
   public readonly VAPID_PUBLIC_KEY = 'BH-6yg2vBmRxMIc7fHNk2pICGzFGMCy_Y0NKmX3vLTrI08MqlxIJ5uvNOMpVft8EXXNe-AhEqtO75IiEnelEeQg';
+  
   respuesta: any;
 
   subscribeToNotifications() {
