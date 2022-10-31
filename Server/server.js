@@ -1,10 +1,22 @@
 //Librerias necesaias
 const webPush = require('web-push');
 const express = require('express');
-const cors = require('cors');
+const Cors = require('cors');
 const bodyParser = require('body-parser');
 
+//Librerias propias de node
+const fs = require('fs');
+const path = require('path');
+
+//inicia la app node
 const app = express();
+
+//le decimos que use cors para evitar conflictos con otras conexiones
+app.use(Cors);
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Creamos las llaves
 
@@ -21,11 +33,19 @@ webPush.setVapidDetails(
     vapidKeys.privateKey
 )
 
-// app.use(bodyParser.urlencoded({ extended: false }))
+//Controladores
 
-// app.use(bodyParser.json());
+const guardarNotificacion = (req, res) => {
+    
+    const name = Math.floor(Date.now() / 1000);
 
-// app.use(cors());
+    let tokenBrowser = req.body.token;
+
+    let data = JSON.stringify(tokenBrowser, null, 2);
+
+    fs.writeFile(`./tokens/token-${name}.json`, data)
+
+}
 
 const enviarNotificacion = (req, res) => {
     const pushSubscription = {
@@ -61,8 +81,13 @@ const enviarNotificacion = (req, res) => {
 
 }
 
-app.route('/api/enviar').post(enviarNotificacion);
+//Rutas
 
+app.route('/save').post(guardarNotificacion);
+
+app.route('/send').post(enviarNotificacion);
+
+ // iniciar el servidor express
 
 const httpServer = app.listen(9000, () => {
     console.log('HTTP Server running at http://localhost:' + httpServer.address().port)

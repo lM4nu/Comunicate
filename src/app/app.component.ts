@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SwPush, SwUpdate } from '@angular/service-worker';
+import { json } from 'body-parser';
 import { NotificationService } from './services/notification.service';
 
 @Component({
@@ -35,7 +36,7 @@ export class AppComponent {
 
     // Nueva Version - Actualizar
 
-
+    this.subscribeToNotifications();
 
   }
 
@@ -44,20 +45,30 @@ export class AppComponent {
   // Notificaciones Push
 
   public readonly VAPID_PUBLIC_KEY = 'BH-6yg2vBmRxMIc7fHNk2pICGzFGMCy_Y0NKmX3vLTrI08MqlxIJ5uvNOMpVft8EXXNe-AhEqtO75IiEnelEeQg';
-  
+
   respuesta: any;
 
-  subscribeToNotifications() {
+  subscribeToNotifications(): any {
     this.swPush.requestSubscription(
       {
         serverPublicKey: this.VAPID_PUBLIC_KEY
       }
     ).then(respuesta => {
       this.respuesta = respuesta
+
+      //otras pruebas
+      const token = JSON.parse(JSON.stringify(respuesta));
+      console.log('token: ' + token)
+      this.notificationService.saveToken(token).subscribe({
+        next: (res: Object) => {
+          console.log(res)
+        }, error: err => {
+          console.log('error', err)
+        }
+      });
+    }).catch(err => {
+      this.respuesta = err
     })
-      .catch(err => {
-        this.respuesta = err
-      })
   }
 
 

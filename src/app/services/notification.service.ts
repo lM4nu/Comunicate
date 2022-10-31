@@ -8,11 +8,11 @@ export class NotificationService {
 
   constructor(private httpClient:HttpClient) { }
 
-  public url = "http://localhost:9000";
+  public url = 'http://localhost:9000';
 
 
   saveToken = (token:any) => {
-    return this.httpClient.post('${this.url}/api/save',
+    return this.httpClient.post(`${this.url +'/save'}`,
     {
       token
     });
