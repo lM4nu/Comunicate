@@ -24,18 +24,18 @@ export class GaleryComponent implements OnInit {
     } else {
       this.localStorageService.imgData = this.localStorageService.getData();
     }
-    this.navbar();
+    //this.navbar();
   }
 
-  navbar(): void {
-    const btn = document.querySelector('.btn') as HTMLButtonElement;
-    const nav = document.querySelector('.navbar') as HTMLElement;
+  //navbar(): void {
+  //const btn = document.querySelector('.btn') as HTMLButtonElement;
+  //const nav = document.querySelector('.navbar') as HTMLElement;
 
-    btn.addEventListener('click', (): void => {
-      nav.classList.toggle('activo');
-      btn.classList.toggle('btn-white');
-    });
-  }
+  //btn.addEventListener('click', (): void => {
+  //nav.classList.toggle('activo');
+  //btn.classList.toggle('btn-white');
+  //});
+  //}
 
   submit() {
     const inputs: any = document.querySelectorAll('.check') as unknown;
@@ -44,12 +44,30 @@ export class GaleryComponent implements OnInit {
       const value = input.checked;
       const title = input.parentNode.querySelector('h2');
       const img = input.parentNode.querySelector('img');
-      //console.log({ value: value, title: title.innerHTML, img: img });
+      //console.log({ title: title.innerHTML, img: img.src });
       if (value && selected.length < 2) {
         selected.push({ title: title.innerHTML, img: img.src });
       }
     });
     this.localStorageService.setPairs(selected);
-    this.router.navigate(['/game']);
+    //this.router.navigate(['/game']);
+  }
+
+  delete() {
+    const inputs: any = document.querySelectorAll('.check') as unknown;
+    inputs.forEach((input: any) => {
+      const value = input.checked;
+      const title = input.parentNode.querySelector('h2').innerHTML;
+      const img = input.parentNode.querySelector('img').src;
+      if (value) {
+        //selected.push({ title: title.innerHTML, img: img.src });
+        //this.localStorageService.deleteImgData(this.localStorageService.imgData.indexOf({title: title.innerHTML, img: img.src}))
+        console.log({ title: title, img: img });
+        console.log(this.localStorageService.imgData);
+        console.log(
+          this.localStorageService.imgData.indexOf({ title: title, img: img })
+        );
+      }
+    });
   }
 }

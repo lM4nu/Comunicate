@@ -1,0 +1,22 @@
+<button #btn class="btn" (click)="toggle(btn, navbar)">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav #navbar class="navbar">
+  <ul class="list">
+    <li class="list-item">
+      <a routerLink="/home" routerLinkActive="active" class="link">Home</a>
+    </li>
+    <li class="list-item">
+      <a routerLink="/add-image" routerLinkActive="active" class="link"
+        >Agregar imagen</a
+      >
+    </li>
+    <li class="list-item">
+      <a routerLink="/galery" routerLinkActive="active" class="link">Galeria</a>
+    </li>
+    <li class="list-item">
+      <a routerLink="/options" routerLinkActive="active">Opciones</a>
+    </li>
+  </ul>
+</nav>

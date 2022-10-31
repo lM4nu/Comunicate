@@ -1,4 +1,5 @@
 <div class="add-img-container">
+  <app-navbar></app-navbar>
   <button class="btn" routerLink="/home" routerLinkActive="active"></button>
   <h2 class="title">Agregar nueva imagen</h2>
   <form #formData="ngForm" (ngSubmit)="submit(formData, imgInput)" class="form">

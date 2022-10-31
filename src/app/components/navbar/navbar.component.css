@@ -1,16 +1,3 @@
-.game-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*height: 100vh;*/
-  /*width: 100%;*/
-  background-image: url("../../../assets/img/wallpaper.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-style: solid;
-}
-
 .btn {
   position: fixed;
   top: 5vh;
@@ -47,6 +34,11 @@ i {
   opacity: 0;
 }
 
+.activo {
+  left: 0;
+  opacity: 1;
+}
+
 .list {
   height: 70%;
   width: 80%;
@@ -57,30 +49,8 @@ i {
   list-style: none;
 }
 
-.activo {
-  left: 0;
-  opacity: 1;
-}
-
 a {
   font-size: 1.5em;
   text-decoration: none;
   color: #f0f8ff;
-}
-
-.cards {
-  border: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /*border-style: solid;*/
-}
-
-.form {
-  margin-top: 5%;
-}
-
-.app-card {
-  width: 40%;
 }

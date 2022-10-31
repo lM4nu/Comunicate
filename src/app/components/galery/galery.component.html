@@ -1,35 +1,15 @@
+<app-navbar></app-navbar>
 <div class="game-container">
-  <button class="btn">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
-  <nav class="navbar">
-    <ul class="list">
-      <li class="list-item">
-        <a routerLink="/home" routerLinkActive="active" class="link">Home</a>
-      </li>
-      <li class="list-item">
-        <a routerLink="/add-image" routerLinkActive="active" class="link"
-          >Agregar imagen</a
-        >
-      </li>
-      <li class="list-item">
-        <a routerLink="/galery" routerLinkActive="active" class="link"
-          >Galeria</a
-        >
-      </li>
-      <li class="list-item">
-        <a routerLink="/options" routerLinkActive="active">Opciones</a>
-      </li>
-    </ul>
-  </nav>
-  <form class="cards" #formData="ngForm" (ngSubmit)="submit()">
-    <app-card
-      class="app-card"
-      *ngFor="let item of localStorageService.imgData"
-      [info]="item"
-      [showDelete]="true"
-    ></app-card>
+  <form class="form" (ngSubmit)="submit()">
+    <div class="cards">
+      <app-card
+        class="app-card"
+        *ngFor="let item of localStorageService.imgData"
+        [info]="item"
+        [showDelete]="true"
+      ></app-card>
+    </div>
     <input type="submit" value="submit" />
+    <input (click)="delete()" type="button" value="delete" />
   </form>
 </div>

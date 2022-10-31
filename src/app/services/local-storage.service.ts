@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DATA } from 'src/app/cards-info';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,11 @@ export class LocalStorageService {
   }
 
   public setPairs(Data: any) {
-    localStorage.setItem('pairs', JSON.stringify(Data));
+    Data.forEach((item: any, index: any) => {
+      //console.log(JSON.stringify(item));
+      //console.log(index);
+      localStorage.setItem(`pair${index}`, JSON.stringify(item));
+    });
     this.imgPairs = Data;
   }
 
@@ -42,7 +47,7 @@ export class LocalStorageService {
   }
 
   public isEmptyPairs() {
-    return localStorage.getItem('pairs') ? false : true;
+    return localStorage.getItem('pair0') ? false : true;
   }
 
   public getData() {
@@ -51,8 +56,11 @@ export class LocalStorageService {
   }
 
   public getPairs() {
-    const string: any = localStorage.getItem('pairs');
-    return JSON.parse(string);
+    const spair0: any = localStorage.getItem('pair0');
+    const pair0 = JSON.parse(spair0);
+    const spair1: any = localStorage.getItem('pair1');
+    const pair1 = JSON.parse(spair1);
+    return [pair0, pair1];
   }
 
   public showStorage() {
