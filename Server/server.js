@@ -36,7 +36,7 @@ webPush.setVapidDetails(
 //Controladores
 
 const guardarNotificacion = (req, res) => {
-    
+
     const name = Math.floor(Date.now() / 1000);
 
     let tokenBrowser = req.body.token;
@@ -44,6 +44,11 @@ const guardarNotificacion = (req, res) => {
     let data = JSON.stringify(tokenBrowser, null, 2);
 
     fs.writeFile(`./tokens/token-${name}.json`, data)
+
+    res.set('Content-Type', 'application/json');
+    var jsonData = JSON.stringify(req.body);
+    res.status(201);
+    res.json();
 
 }
 
@@ -87,7 +92,7 @@ app.route('/save').post(guardarNotificacion);
 
 app.route('/send').post(enviarNotificacion);
 
- // iniciar el servidor express
+// iniciar el servidor express
 
 const httpServer = app.listen(9000, () => {
     console.log('HTTP Server running at http://localhost:' + httpServer.address().port)
