@@ -10,6 +10,8 @@ import { SpeechService } from 'src/app/services/speech.service';
 export class CardComponent implements OnInit {
   @Input() info: any;
 
+  @Input() showDelete: any;
+
   valor_filtros: string | undefined;
 
   constructor(
@@ -33,6 +35,6 @@ export class CardComponent implements OnInit {
 
   borrar(info: any) {
     const index = this.localStorageService.imgData.indexOf(info);
-    this.localStorageService.delete(index);
+    this.localStorageService.deleteImgData(index);
   }
 }

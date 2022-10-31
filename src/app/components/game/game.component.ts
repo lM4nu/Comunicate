@@ -13,12 +13,10 @@ export class GameComponent implements OnInit {
   cards: any;
 
   ngOnInit(): void {
-    if (this.localStorageService.isEmpty()) {
-      DATA.forEach((item) => {
-        this.localStorageService.addImgData(item);
-      });
+    if (this.localStorageService.isEmptyPairs()) {
+      this.localStorageService.setPairs(DATA);
     } else {
-      this.localStorageService.imgData = this.localStorageService.getData();
+      this.localStorageService.imgPairs = this.localStorageService.getPairs();
     }
     this.navbar();
   }

@@ -14,6 +14,11 @@
         >
       </li>
       <li class="list-item">
+        <a routerLink="/galery" routerLinkActive="active" class="link"
+          >Galeria</a
+        >
+      </li>
+      <li class="list-item">
         <a routerLink="/options" routerLinkActive="active">Opciones</a>
       </li>
     </ul>
@@ -21,9 +26,8 @@
   <div class="cards">
     <app-card
       class="app-card"
-      *ngFor="let item of localStorageService.imgData"
+      *ngFor="let item of localStorageService.imgPairs"
       [info]="item"
     ></app-card>
   </div>
 </div>
-

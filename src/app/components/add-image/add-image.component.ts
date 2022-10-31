@@ -23,7 +23,9 @@ export class AddImageComponent implements OnInit {
       formData.form.value.img = e.target.result;
       //console.log(formData.form.value);
       this.localStorageService.addImgData(formData.form.value);
-      this.router.navigate(['/game']);
+      this.localStorageService.addImgData(formData.form.value);
+      this.localStorageService.addImgData(formData.form.value);
+      this.router.navigate(['/galery']);
     };
   }
 }

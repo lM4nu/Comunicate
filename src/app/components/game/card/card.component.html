@@ -7,5 +7,5 @@
     [style]="valor_filtros"
   />
   <h2 class="title" (click)="hablar(info.title)">{{ info.title }}</h2>
-  <input class="title" type="button" value="X" (click)="borrar(info)" />
+  <input *ngIf="showDelete" class="title check" type="checkbox" />
 </div>

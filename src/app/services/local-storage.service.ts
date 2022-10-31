@@ -8,8 +8,10 @@ export class LocalStorageService {
 
   imgData: any[] = [];
 
+  imgPairs: any[] = [];
+
   public addImgData(formData: any) {
-    if (!this.isEmpty()) {
+    if (!this.isEmptyData()) {
       let json = this.getData();
       json.push(formData);
       localStorage.setItem('imgData', JSON.stringify(json));
@@ -21,7 +23,12 @@ export class LocalStorageService {
     }
   }
 
-  public delete(index: number) {
+  public setPairs(Data: any) {
+    localStorage.setItem('pairs', JSON.stringify(Data));
+    this.imgPairs = Data;
+  }
+
+  public deleteImgData(index: number) {
     this.imgData.splice(index, 1);
     localStorage.setItem('imgData', JSON.stringify(this.imgData));
 
@@ -30,12 +37,21 @@ export class LocalStorageService {
     }
   }
 
-  public isEmpty() {
+  public isEmptyData() {
     return localStorage.getItem('imgData') ? false : true;
+  }
+
+  public isEmptyPairs() {
+    return localStorage.getItem('pairs') ? false : true;
   }
 
   public getData() {
     const string: any = localStorage.getItem('imgData');
+    return JSON.parse(string);
+  }
+
+  public getPairs() {
+    const string: any = localStorage.getItem('pairs');
     return JSON.parse(string);
   }
 
