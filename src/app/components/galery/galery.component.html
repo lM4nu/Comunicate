@@ -4,12 +4,18 @@
     <div class="cards">
       <app-card
         class="app-card"
+        *ngFor="let item of data"
+        [info]="item"
+        [showAdd]="true"
+      ></app-card>
+      <app-card
+        class="app-card"
         *ngFor="let item of localStorageService.imgData"
         [info]="item"
         [showDelete]="true"
+        [showAdd]="true"
       ></app-card>
     </div>
-    <input type="submit" value="submit" />
-    <input (click)="delete()" type="button" value="delete" />
+    <input class="submit" type="submit" value="Cambiar" />
   </form>
 </div>

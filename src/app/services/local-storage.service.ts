@@ -63,6 +63,18 @@ export class LocalStorageService {
     return [pair0, pair1];
   }
 
+  public findIndex(object: object) {
+    let re = -1;
+    const objectstring = JSON.stringify(object);
+    this.imgData.forEach((item, index) => {
+      const string = JSON.stringify(item);
+      if (objectstring == string) {
+        re = index;
+      }
+    });
+    return re;
+  }
+
   public showStorage() {
     //console.log(localStorage.getItem('imgData'));
     console.log(this.getData());

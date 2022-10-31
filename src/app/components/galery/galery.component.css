@@ -8,64 +8,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-style: solid;
-}
-
-.btn {
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
-  padding: 2px;
-  background-color: transparent;
-  border: none;
-  z-index: 99999;
-  transition: all 0.7s ease;
-}
-
-.btn-white {
-  color: #fff;
-}
-
-i {
-  font-size: 2.5em;
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  left: -40%;
-  background-image: linear-gradient(to right, #1d1d1d, #1d1d1df4, #1d1d1de0);
-  position: fixed;
-  top: 0vh;
-  width: 30%;
-  height: 100vh;
-  right: 70%;
-  z-index: 999;
-  transition: all 0.7s ease;
-  opacity: 0;
-}
-
-.list {
-  height: 70%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-}
-
-.activo {
-  left: 0;
-  opacity: 1;
-}
-
-a {
-  font-size: 1.5em;
-  text-decoration: none;
-  color: #f0f8ff;
 }
 
 .cards {
@@ -83,4 +25,17 @@ a {
 
 .app-card {
   width: 40%;
+}
+
+.submit {
+  position: fixed;
+  font-size: 1.5em;
+  top: 5vh;
+  right: 5vw;
+  text-decoration: none;
+  line-height: normal;
+  padding: 0.2em 0.5em;
+  border: 0.3em solid #000;
+  border-radius: 40%;
+  background-color: white;
 }

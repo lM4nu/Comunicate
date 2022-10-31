@@ -12,6 +12,8 @@ export class CardComponent implements OnInit {
 
   @Input() showDelete: any;
 
+  @Input() showAdd: any;
+
   valor_filtros: string | undefined;
 
   constructor(
@@ -29,8 +31,16 @@ export class CardComponent implements OnInit {
     )}%) contrast(${localStorage.getItem('contrast')}%);`;
   }
 
-  hablar(input: string) {
-    this.speechService.hablar(input);
+  hablar(input: string, html: any) {
+    if (this.showAdd) {
+      const parent = html.parentNode;
+      const checked = parent.querySelector('.check').checked;
+      checked
+        ? (parent.querySelector('.check').checked = false)
+        : (parent.querySelector('.check').checked = true);
+    } else {
+      this.speechService.hablar(input);
+    }
   }
 
   borrar(info: any) {
