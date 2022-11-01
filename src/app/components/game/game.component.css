@@ -63,7 +63,7 @@ i {
     margin: 0px 150px;
     transform: scale(2);
   }
-}
+} 
 
 @media (min-width:610px) and (max-height: 415px) {
   .cards {
