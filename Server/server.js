@@ -12,11 +12,11 @@ const path = require('path');
 const app = express();
 
 //le decimos que use cors para evitar conflictos con otras conexiones
-app.use(Cors);
+// app.use(Cors);
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.urlencoded({ extended: false }))
 
 // Creamos las llaves
 
@@ -33,6 +33,12 @@ webPush.setVapidDetails(
     vapidKeys.privateKey
 )
 
+// Helpers
+
+const handlerResponse = (res, data, code = 200) => {
+    res.status(code).send({ data });
+}
+
 //Controladores
 
 const guardarNotificacion = (req, res) => {
@@ -43,14 +49,15 @@ const guardarNotificacion = (req, res) => {
 
     let data = JSON.stringify(tokenBrowser, null, 2);
 
-    fs.writeFile(`./tokens/token-${name}.json`, data)
+    fs.writeFile(`./tokens/token-${name}.json`, data, (err) => {
 
-    res.set('Content-Type', 'application/json');
-    var jsonData = JSON.stringify(req.body);
-    res.status(201);
-    res.json();
+        if (err) throw err;
+        handlerResponse(res, 'Save Success')
+    });
 
-}
+};
+
+
 
 const enviarNotificacion = (req, res) => {
     const pushSubscription = {
