@@ -1,11 +1,8 @@
 <div class="container-imagen">
-  <img
-    class="imagen"
-    [src]="info.img"
-    alt="image"
-    (click)="hablar(info.title)"
-    [style]="valor_filtros"
-  />
-  <h2 class="title" (click)="hablar(info.title)">{{ info.title }}</h2>
-  <input class="title" type="button" value="X" (click)="borrar(info)" />
+  <img #img class="imagen" [src]="info.img" alt="image" (click)="hablar(info.title, img)" [style]="valor_filtros" />
+  <div class="buttons">
+    <h2 #h2 class="title" (click)="hablar(info.title, h2)">{{ info.title }}</h2>
+    <input *ngIf="showAdd" class="title check" type="checkbox" />
+    <input (click)="borrar(info)" *ngIf="showDelete" type="button" class="title delete" value="X" />
+  </div>
 </div>

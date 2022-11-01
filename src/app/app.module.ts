@@ -13,6 +13,7 @@ import { CardComponent } from './components/game/card/card.component';
 import { AddImageComponent } from './components/add-image/add-image.component';
 import { GaleryComponent } from './components/galery/galery.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     AddImageComponent,
     GaleryComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

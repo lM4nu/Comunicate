@@ -1,12 +1,9 @@
 <div class="add-img-container">
-  <button class="btn" routerLink="/home" routerLinkActive="active"></button>
+  <app-navbar></app-navbar>
   <h2 class="title">Agregar nueva imagen</h2>
   <form #formData="ngForm" (ngSubmit)="submit(formData, imgInput)" class="form">
     <input ngModel name="title" type="text" placeholder="Titulo..." required />
     <input #imgInput ngModel name="img" type="file" accept="image/*" required />
-    <!--<div class="search-img">-->
-    <!--<label>Url de la imagen</label><button class="btn-form">Buscar</button>-->
-    <!--</div>-->
     <button class="btn-form" type="submit">Subir</button>
   </form>
 </div>

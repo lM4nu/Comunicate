@@ -1,7 +1,9 @@
 <div class="options-container">
-    <button class="btn" routerLink="/home" routerLinkActive="active"><<</button>
-    <h2 class="title">{{title}}</h2>
+    <button class="btn" routerLink="/home" routerLinkActive="active">
+        <i class="fa-solid fa-backward"></i>
+    </button>
     <div class="menu-options">
+        <h2 class="title">{{title}}</h2>
         <h3>Correcciones de imágenes</h3>
         <div class="settings">
             <h4>Ajustar difuminación</h4>
@@ -23,8 +25,6 @@
                     [value]="saturate_value">
             </div>
         </div>
-        <div class="img-container">
-            <img class="imagen" src="../../assets/img/wallpaper_10.jpg" alt="image">
-        </div>
+        <img class="imagen" src="../../assets/img/wallpaper_10.jpg" alt="image">
     </div>
 </div>

@@ -12,24 +12,11 @@ export class GameComponent implements OnInit {
 
   cards: any;
 
+  public data = DATA;
+
   ngOnInit(): void {
-    if (this.localStorageService.isEmpty()) {
-      DATA.forEach((item) => {
-        this.localStorageService.addImgData(item);
-      });
-    } else {
-      this.localStorageService.imgData = this.localStorageService.getData();
+    if (!this.localStorageService.isEmptyPairs()) {
+      this.localStorageService.imgPairs = this.localStorageService.getPairs();
     }
-    this.navbar();
-  }
-
-  navbar(): void {
-    const btn = document.querySelector('.btn') as HTMLButtonElement;
-    const nav = document.querySelector('.navbar') as HTMLElement;
-
-    btn.addEventListener('click', (): void => {
-      nav.classList.toggle('activo');
-      btn.classList.toggle('btn-white');
-    });
   }
 }
