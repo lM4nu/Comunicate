@@ -1,16 +1,28 @@
 .btn {
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
   padding: 2px;
   background-color: transparent;
   border: none;
-  z-index: 99999;
   transition: all 0.7s ease;
+  color: #fff;
 }
 
-.btn-white {
-  color: #fff;
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2vh 5vw;
+  max-width: 100vw;
+  min-width: 100vw;
+  height: 10vh;
+  min-height: 45px;
+  z-index: 2;
+  background-color: #1d1d1d;
+}
+
+.nav div {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 i {
@@ -22,16 +34,17 @@ i {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  left: -40%;
-  background-image: linear-gradient(to right, #1d1d1d, #1d1d1df4, #1d1d1de0);
+  left: -100%;
+  background-color: #1d1d1d;
   position: fixed;
   top: 0vh;
-  width: 30%;
-  height: 100vh;
+  width: 65%;
+  height: 101vh;
   right: 70%;
-  z-index: 999;
+  z-index: 1;
   transition: all 0.7s ease;
   opacity: 0;
+  text-align: center;
 }
 
 .activo {
@@ -41,16 +54,22 @@ i {
 
 .list {
   height: 70%;
-  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   list-style: none;
+  padding: 10px;
 }
 
 a {
   font-size: 1.5em;
   text-decoration: none;
   color: #f0f8ff;
+}
+
+@media (min-width:1000px) {
+  .navbar {
+    width: 30%;
+  }
 }

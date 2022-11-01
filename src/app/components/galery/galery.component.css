@@ -1,41 +1,48 @@
-.game-container {
+.galery-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  /*height: 100vh;*/
-  /*width: 100%;*/
-  background-image: url("../../../assets/img/wallpaper.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: #cfacac;
 }
 
 .cards {
   border: 0;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   justify-content: space-evenly;
-  /*border-style: solid;*/
 }
 
 .form {
-  margin-top: 5%;
-}
-
-.app-card {
-  width: 40%;
+  margin-top: 15vh;
+  width: 100%;
 }
 
 .submit {
   position: fixed;
-  font-size: 1.5em;
-  top: 5vh;
+  font-size: 1.15em;
+  top: 2vh;
   right: 5vw;
-  text-decoration: none;
-  line-height: normal;
   padding: 0.2em 0.5em;
-  border: 0.3em solid #000;
-  border-radius: 40%;
-  background-color: white;
+  border: 3px solid #000;
+  border-radius: 20px;
+  background-color: #ffffff;
+  z-index: 6;
+}
+.app-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 223px;
+  background-color: #212023;
+  -webkit-box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
+  box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 12px 0;
 }

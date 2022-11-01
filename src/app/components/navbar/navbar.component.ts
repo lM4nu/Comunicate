@@ -10,8 +10,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggle(btn: any, navbar: any) {
+  toggle(navbar: any) {
     navbar.classList.toggle('activo');
-    btn.classList.toggle('btn-white');
   }
 }

@@ -1,17 +1,11 @@
 <div class="game-container">
   <app-navbar></app-navbar>
+
   <div *ngIf="localStorageService.isEmptyPairs()" class="cards">
-    <app-card
-      class="app-card"
-      *ngFor="let item of data"
-      [info]="item"
-    ></app-card>
+    <app-card class="app-card" *ngFor="let item of data" [info]="item"></app-card>
   </div>
   <div *ngIf="!localStorageService.isEmptyPairs()" class="cards">
-    <app-card
-      class="app-card"
-      *ngFor="let item of localStorageService.imgPairs"
-      [info]="item"
-    ></app-card>
+    <app-card class="app-card" *ngFor="let item of localStorageService.imgPairs" [info]="item"></app-card>
   </div>
+
 </div>

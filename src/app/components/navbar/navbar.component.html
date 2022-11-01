@@ -1,16 +1,18 @@
-<button #btn class="btn" (click)="toggle(btn, navbar)">
-  <i class="fa-solid fa-bars"></i>
-</button>
+<div class="nav">
+  <div>
+    <button class="btn" (click)="toggle(navbar)">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</div>
 
-<nav #navbar class="navbar">
+<nav #navbar class="navbar" (click)="toggle(navbar)">
   <ul class="list">
     <li class="list-item">
-      <a routerLink="/game" routerLinkActive="active" class="link">Home</a>
+      <a routerLink="/home" routerLinkActive="active" class="link">Home</a>
     </li>
     <li class="list-item">
-      <a routerLink="/add-image" routerLinkActive="active" class="link"
-        >Agregar imagen</a
-      >
+      <a routerLink="/add-image" routerLinkActive="active" class="link">Agregar imagen</a>
     </li>
     <li class="list-item">
       <a routerLink="/galery" routerLinkActive="active" class="link">Galeria</a>
