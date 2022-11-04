@@ -29,7 +29,7 @@
   background-color: #1d1d1d;
   position: fixed;
   top: 0vh;
-  width: 65%;
+  width: 35%;
   height: 101vh;
   right: 70%;
   z-index: 1;
@@ -56,4 +56,10 @@ a {
   font-size: 1.5em;
   text-decoration: none;
   color: #f0f8ff;
+}
+
+@media (orientation: portrait) {
+  .navbar {
+    width: 65%;
+  }
 }
