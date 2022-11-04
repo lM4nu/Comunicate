@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 .img-gallery {
@@ -14,8 +16,10 @@
 }
 
 .img-game {
+  object-fit: contain;
   width: 100%;
-  border: 0.2em solid #fff;
+  height: 85%;
+  border: 0.2em;
   border-radius: 2em;
   background-color: aliceblue;
   text-align: center;
@@ -36,6 +40,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  height: 10%;
 }
 
 .check,
@@ -56,5 +61,15 @@
 @media (orientation: portrait) {
   .title {
     font-size: 1em;
+  }
+
+  .img-game {
+    object-fit: fill;
+    width: 100%;
+    height: 85%;
+    border: 0.2em solid #fff;
+    border-radius: 2em;
+    background-color: aliceblue;
+    text-align: center;
   }
 }

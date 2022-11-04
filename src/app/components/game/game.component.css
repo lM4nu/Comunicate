@@ -15,6 +15,7 @@
 
 .app-card {
   width: 40%;
+  height: 90%;
   margin: 2em;
   /*border-style: solid;*/
   /*border-color: red;*/
@@ -23,9 +24,12 @@
 @media (orientation: portrait) {
   .game-container {
     flex-direction: column;
+    margin-top: 10vh;
+    height: 90vh;
   }
 
   .app-card {
     width: 45vw;
+    height: auto;
   }
 }
