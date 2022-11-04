@@ -9,12 +9,13 @@
 
 .cards {
   border: 0;
-  width: 100%;
+  /*width: 100%;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  border-style: solid;
 }
 
 .form {
@@ -37,8 +38,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 260px;
-  height: 223px;
+  /*width: 260px;*/
+  /*height: 223px;*/
   background-color: #212023;
   -webkit-box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
   box-shadow: 1px 0px 35px -8px rgba(0, 0, 0, 0.56);
@@ -46,3 +47,4 @@
   border-radius: 8px;
   margin: 12px 0;
 }
+
