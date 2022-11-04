@@ -4,10 +4,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-image: url("../../../assets/img/wallpaper.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f5bf67;
 }
 
 .btn {
@@ -61,7 +58,6 @@ i {
 
   .app-card {
     margin: 0px 150px;
-    transform: scale(2);
   }
 } 
 

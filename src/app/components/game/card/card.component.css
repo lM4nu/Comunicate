@@ -6,21 +6,20 @@
 }
 
 img {
-  min-width: 230px;
-  max-width: 230px;
+  max-width: 95%;
   max-height: 150px;
-  min-height: 150px;
   border: 2px solid #fff;
   border-radius: 30px;
-  background-color: aliceblue;
+  background-color: #f0f8ff;
   text-align: center;
+  object-fit: contain;
 }
 
 .title {
   margin: 10px 0;
   font-size: 1.15em;
   padding: 0.2em 0.5em;
-  border: 3px solid #000;
+  border: 2px solid #000;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -40,4 +39,10 @@ img {
 
 .delete {
   background-color: red;
+}
+
+@media (min-width: 1000px) {
+  img {
+    max-height: 350px;
+  }
 }

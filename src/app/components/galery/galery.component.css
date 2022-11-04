@@ -46,3 +46,10 @@
   border-radius: 8px;
   margin: 12px 0;
 }
+
+@media (min-width: 720px) {
+  .app-card {
+    width: 520px;
+    height: 446px;
+  }
+}
