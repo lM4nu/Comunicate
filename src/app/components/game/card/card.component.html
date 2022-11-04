@@ -1,7 +1,17 @@
 <div *ngIf="cardInfo" class="container-imagen">
   <img
+    *ngIf="showAdd"
     #img
-    class="imagen"
+    class="img-gallery"
+    [src]="cardInfo.img"
+    alt="image"
+    (click)="hablar(cardInfo.title, img)"
+    [style]="valor_filtros"
+  />
+  <img
+    *ngIf="!showAdd"
+    #img
+    class="img-game"
     [src]="cardInfo.img"
     alt="image"
     (click)="hablar(cardInfo.title, img)"
