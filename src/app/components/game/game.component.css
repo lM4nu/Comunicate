@@ -24,12 +24,16 @@
 @media (orientation: portrait) {
   .game-container {
     flex-direction: column;
+    justify-content: space-evenly;
     margin-top: 10vh;
     height: 90vh;
   }
 
   .app-card {
-    width: 45vw;
-    height: auto;
+    width: 80%;
+    height: 40%;
+    margin: 0;
+    /*border-style: solid;*/
+    /*border-color: red;*/
   }
 }
