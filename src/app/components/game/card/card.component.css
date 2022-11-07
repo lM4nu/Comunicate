@@ -7,23 +7,12 @@
   width: 100%;
 }
 
-
 .img-gallery {
   width: 100%;
   border: 0.2em solid #fff;
   border-radius: 2em 2em 0em 0em;
   background-color: aliceblue;
-}
-
-img {
-  max-width: 95%;
-  max-height: 150px;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  background-color: #f0f8ff;
-
   text-align: center;
-  object-fit: contain;
 }
 
 .img-game {
@@ -38,15 +27,10 @@ img {
 .title {
   /*margin-top: 0.5em;*/
   /*margin-bottom: 0.5em;*/
-  font-size: 1.5em;
+  font-size: 80%;
   padding: 0.2em 0.5em;
-
   border: 0.25em solid #000;
   border-radius: 2.5vw;
-
-  border: 2px solid #000;
-  border-radius: 10px;
-
   background-color: #fff;
 }
 
@@ -87,13 +71,5 @@ img {
     border-radius: 2em;
     background-color: aliceblue;
     text-align: center;
-  }
-}
-
-
-
-@media (min-width: 1000px) {
-  img {
-    max-height: 350px;
   }
 }
