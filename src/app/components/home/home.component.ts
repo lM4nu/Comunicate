@@ -9,10 +9,6 @@ export class HomeComponent implements OnInit {
 
   title: string = 'Comunicate';
 
-
-  title: string = 'COMUNICATE';
-n
-
   constructor() {}
 
   ngOnInit(): void {}
