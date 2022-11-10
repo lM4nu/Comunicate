@@ -5,11 +5,10 @@
     "ng": "ng",
     "start": "ng server.js",
     "build": "ng build",
-    "gh-build": "ng build --base-href=/Comunicate/",
+    "gh-build": "ng build --configuration production --base-href=/Comunicate/",
     "deploy": "ng deploy --base-href=/Comunicate/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "postinstall": "ng build --configuration production"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
