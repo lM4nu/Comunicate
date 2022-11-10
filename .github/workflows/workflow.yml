@@ -28,5 +28,11 @@ jobs:
           npm run build
 
       - name: Deploy
-        run: |
-          npm run deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist/clon-de-hablalo # The folder the action should deploy.  
+
+      #- name: Deploy
+        #run: |
+          #npm run deploy
