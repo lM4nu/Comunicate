@@ -28,3 +28,20 @@
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "data-api",
+      "urls": [
+        ""
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 5,
+        "maxAge": "50m",
+        "timeout": "5s"
+      }
+    }
+  ]
+}
