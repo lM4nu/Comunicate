@@ -1,38 +1,28 @@
-name: Angular GitHub CI/CD
+name: Github Pages Deploy
+
 on:
   push:
     branches:
-      - main
+      - "master"
+
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [16.18]
-
+    
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install Dependencies
-        run: |
-          npm install
-
-      - name: Build
-        run: |
-          npm run prodbuild && cp dist/clon-de-hablalo/index.html dist/clon-de-hablalo/404.html
-
+      - name: Install and build
+        working-directory: .
+        run: npm install && npm run gh-build && cp dist/clon-de-hablalo/index.html dist/clon-de-hablalo/404.html
+      
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: dist/clon-de-hablalo # The folder the action should deploy.  
-
-      #- name: Deploy
-        #run: |
-          #npm run deploy
+          folder: dist/clon-de-hablalo # The folder the action should deploy.        
