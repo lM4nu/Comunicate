@@ -5,9 +5,7 @@
     "ng": "ng",
     "start": "ng server.js",
     "build": "ng build",
-    "prodbuild": "ng build --configuration production",
     "gh-build": "ng build --configuration production --base-href=/Comunicate/",
-    "deploy": "ng deploy --base-href=/Comunicate/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
