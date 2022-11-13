@@ -57,9 +57,9 @@
   filter: contrast(150%);
 }
 
-@media (orientation: portrait) and (max-width: 800px) {
+@media (orientation: portrait) {
   .title {
-    font-size: 2.5em;
+    font-size: 6vw;
   }
 
   .btn {
@@ -70,5 +70,3 @@
     width: 50%;
   }
 }
-
-/*@media (orientation: landscape)*/
