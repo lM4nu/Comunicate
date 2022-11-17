@@ -11,11 +11,10 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/*.html"
         ],
-        "urls": [
-          ""
-        ]
+        "urls": [""]
       }
     },
     {
@@ -33,9 +32,7 @@
   "dataGroups": [
     {
       "name": "data-api",
-      "urls": [
-        ""
-      ],
+      "urls": [""],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 5,
